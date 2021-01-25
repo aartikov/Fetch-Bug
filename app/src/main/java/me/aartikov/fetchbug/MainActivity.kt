@@ -165,7 +165,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onCompleted(download: Download) {
-            fetch.remove(download.id)   // Fixes other bug
+            fetch.remove(download.id)   // Workaround for https://github.com/tonyofrancis/Fetch/issues/553
             pref.fetchDownloadingId = null
             pref.status = Status.DOWNLOADED
             updateView()
